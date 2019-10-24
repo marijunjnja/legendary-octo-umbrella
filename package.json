@@ -10,14 +10,19 @@
     "react-scripts": "3.1.2",
     "typescript": "^3.6.3"
   },
+  "devDependencies": {
+    "@josefaidt/eslint-config": "^0.1.9",
+    "@josefaidt/prettier-config": "0.0.2",
+    "eslint": "^6.5.1",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.2",
+    "prettier": "^1.18.2"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   },
   "browserslist": {
     "production": [
@@ -29,6 +34,29 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "@josefaidt/eslint-config",
+    "parserOptions": {
+      "ecmaVersion": 9,
+      "sourceType": "module"
+    }
+  },
+  "prettier": "@josefaidt/prettier-config",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{md,mdx,json}": [
+      "prettier --write",
+      "git add"
     ]
   }
 }
