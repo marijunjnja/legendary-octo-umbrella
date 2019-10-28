@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>
-            <code>pip install antigravity</code>
+            <code>ISS Tracker</code>
         </p>
       </header>
     </div>
