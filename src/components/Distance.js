@@ -4,7 +4,6 @@ import * as geolib from 'geolib'
 const Distance = ({ myPosition }) => {
   const [distance, setDistance] = React.useState(null)
   const [issPosition, setIssPosition] = React.useState(null)
-  const [timer, setTimer] = React.useState(null)
 
   React.useEffect(() => {
     // wrap fetch call inside an async function
@@ -20,17 +19,13 @@ const Distance = ({ myPosition }) => {
       setDistance(distanceFromIssMiles)
     }
     // call it inside the useEffect
-    getData()
-    refresh()
-    // pass our dependencies. when they change, the effect is ran again
-  }, [myPosition, timer])
-
-  const refresh = () => {
-    setTimer('yes')
-    setTimeout(() => {
-      setTimer(null)
+    const timer = setInterval(() => {
+      getData()
     }, 1000)
-  }
+
+    return () => clearTimeout(timer)
+    // pass our dependencies. when they change, the effect is ran again
+  }, [myPosition])
 
   if (!distance) return <h1>Loading...</h1>
   else {
