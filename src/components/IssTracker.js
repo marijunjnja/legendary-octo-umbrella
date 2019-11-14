@@ -1,12 +1,10 @@
 import React from 'react'
+import usePosition from '../services/usePosition'
 import Position from './Position'
 import Distance from './Distance'
 
 const IssTracker = props => {
-  const myPosition = {
-    latitude: 30.4515,
-    longitude: -91.1871,
-  }
+  const myPosition = usePosition()
 
   return (
     <div>
