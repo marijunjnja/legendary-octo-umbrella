@@ -1,5 +1,6 @@
 import React from 'react'
 import * as geolib from 'geolib'
+// import styled from 'styled-components'
 
 const Distance = ({ myPosition }) => {
   const [distance, setDistance] = React.useState(null)
