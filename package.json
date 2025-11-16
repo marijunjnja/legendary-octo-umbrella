@@ -7,16 +7,16 @@
     "got": "^9.6.0",
     "react": "^16.11.0",
     "react-dom": "^16.10.1",
-    "react-scripts": "3.1.2",
+    "react-scripts": "5.0.1",
     "styled-components": "^4.4.1",
     "typescript": "^3.6.3"
   },
   "devDependencies": {
     "@josefaidt/eslint-config": "^0.1.9",
     "@josefaidt/prettier-config": "0.0.2",
-    "eslint": "^6.5.1",
-    "husky": "^3.0.9",
-    "lint-staged": "^9.4.2",
+    "eslint": "^9.39.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.6",
     "prettier": "^1.18.2"
   },
   "scripts": {
